@@ -83,7 +83,7 @@ class Football_Data():
     def __init__(self):
         # read csv data into DataFrame self.data
         self.read_football_data_from_csv()
-
+        print(self.data)
         # compute goal difference and assign it
         # into DataFrame column self.data['difference']
         self.compute_goal_difference()
@@ -111,7 +111,7 @@ class Football_Data():
     def compute_goal_difference(self):
 
         if not self.data.empty:
-            self.data['difference'] = self.data['Goals'] - self.data['Goals Allowed']
+            self.data['difference'] = abs(self.data['Goals'] - self.data['Goals Allowed'])
         else:
 
             # TODO: provide some hint for debug purposes... might be deleted in deployment
