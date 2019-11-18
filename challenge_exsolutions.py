@@ -30,11 +30,6 @@ class Weather_Data():
         self.get_min_temperature_distance_by_day()
 
         print(self.min_difference)
-        '''
-        
-        self.fb = pd.read_csv('src/main/resources/de/exxcellent/challenge/football.csv')
-        self.fb['difference'] = abs(self.fb['Goals'] - self.fb['Goals Allowed'])
-        #print(self.fb.loc[self.fb['difference'].idxmin()]['Team'])'''
 
     # assigns a DataFrame (matrix) containing the weather data to self.data
     def read_weather_data_from_csv(self):
