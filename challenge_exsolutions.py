@@ -4,10 +4,10 @@ import os.path
 
 '''
 Task Weather Challenge is solved by class Weather_Data
-in order to run it use the predefined instantiation in line 133
+in order to run it use the predefined instantiation in line 137
 
 Task Football Challenge is solved by class Football_Data
-in order to run it use the predefined instantiation in line 135
+in order to run it use the predefined instantiation in line 139
 
 just run the file to see both solutions printed to stdout
 '''
@@ -28,8 +28,6 @@ class Weather_Data():
         # select smallest temperature min-max distance by day
         # assign it to self.min_difference
         self.get_min_temperature_distance_by_day()
-
-        print(self.min_difference)
 
     # assigns a DataFrame (matrix) containing the weather data to self.data
     def read_weather_data_from_csv(self):
@@ -83,7 +81,7 @@ class Football_Data():
     def __init__(self):
         # read csv data into DataFrame self.data
         self.read_football_data_from_csv()
-        print(self.data)
+        
         # compute goal difference and assign it
         # into DataFrame column self.data['difference']
         self.compute_goal_difference()
@@ -92,7 +90,6 @@ class Football_Data():
         # assign it to self.min_difference
         self.get_min_goal_difference_by_team()
 
-        print(self.min_difference)
 
     # assigns a DataFrame (matrix) containing the weather data to self.data
     def read_football_data_from_csv(self):
@@ -138,5 +135,6 @@ class Football_Data():
 
 
 weather_challenge = Weather_Data()
-
+print(weather_challenge.min_difference)
 football_challenge = Football_Data()
+print(football_challenge.min_difference)
