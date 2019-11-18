@@ -40,6 +40,7 @@ class Weather_Data():
             self.data = pd.read_csv(str(self.__data_path)+str(self.__data_file))
 
         else:
+            #TODO might be deleted in deployment
             # in case there is no file... give some hint to user what went wrong
             print("File does not exist. Please check the path and file location. Run program out of folder programming-challenge.")
         
@@ -50,6 +51,7 @@ class Weather_Data():
         if not self.data.empty:
             self.data['difference'] = abs(self.data['MxT'] - self.data['MnT'])
         else:
+            #TODO might be deleted in deployment
             print('No data exists.')
 
     # select the day with smallest difference in temperature min-max distance by day and
@@ -63,11 +65,13 @@ class Weather_Data():
                 self.min_difference = int(self.data.loc[self.data['difference'].idxmin()]['Day'])
             
             # in case something goes wrong provide an explanation
+            #TODO might be deleted in deployment
             except Exception as e:
                 print('Could not select minimal temperature difference due to: %s' % (str(e)))
         
         else:
             # in case the column self.data['difference'] does not exists explain...
+            #TODO might be deleted in deployment
             print('An error occured while selecting the minimal temperature difference by day')
       
 
@@ -109,6 +113,8 @@ class Football_Data():
         if not self.data.empty:
             self.data['difference'] = self.data['Goals'] - self.data['Goals Allowed']
         else:
+
+            # TODO: provide some hint for debug purposes... might be deleted in deployment
             print('No data exists.')
 
     # select the team with smallest amount of goal difference and assign it to self.min_difference
@@ -121,11 +127,13 @@ class Football_Data():
                 self.min_difference = self.data.loc[self.data['difference'].idxmin()]['Team']
             
             # in case something goes wrong provide an explanation
+            #TODO might be deleted in deployment
             except Exception as e:
                 print('Could not select team with smallest amount of goal difference due to: %s' % (str(e)))
         
         else:
             # in case the column self.data['difference'] does not exists explain...
+            #TODO might be deleted in deployment
             print('An error occured while selecting the smallest goal difference by team')
 
 
