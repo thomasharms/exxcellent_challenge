@@ -139,4 +139,4 @@ class Football_Data():
 
 weather_challenge = Weather_Data()
 
-football_challengen = Football_Data()
+football_challenge = Football_Data()
